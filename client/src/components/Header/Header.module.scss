@@ -1,0 +1,23 @@
+.header {
+  width: 100vw;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 100px;
+  background-color: white;
+  position: absolute;
+  z-index: 50;
+
+  .headerLogo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+
+  .headerLink {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
