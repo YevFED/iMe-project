@@ -5,7 +5,20 @@ import Background from "../../components/background/Background";
 
 const Auth = () => {
   const [side, setSide] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
 
+  const changeSide = (side: boolean) => {
+    setEmail("");
+    setSide(!side);
+    setPassword("");
+    setUsername("");
+  };
+
+  const setUser = (user: string) => {
+    setUsername(user);
+  };
   return (
     <>
       <Background />
@@ -22,18 +35,24 @@ const Auth = () => {
                   type="text"
                   placeholder="Type your email :"
                   className={styles.formInput}
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
                   type="password"
                   placeholder="Type your password :"
                   className={styles.formInput}
-                  defaultValue=""
+                  name="password"
+                  value={password}
+                  minLength={8}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <button type="submit" className={styles.formButton}>
                   Sign In
                 </button>
                 <p
-                  onClick={() => setSide(!side)}
+                  onClick={() => changeSide(side)}
                   className={styles.formChanger}
                 >
                   Don't have account?
@@ -52,25 +71,32 @@ const Auth = () => {
                   type="email"
                   placeholder="Type your email :"
                   className={styles.formInput}
-                  defaultValue=""
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
                   type="text"
                   placeholder="Type your username :"
                   className={styles.formInput}
-                  defaultValue=""
+                  name="username"
+                  value={username}
+                  onChange={(e) => setUser(e.target.value)}
                 />
                 <input
                   type="password"
                   placeholder="Type your password :"
                   className={styles.formInput}
-                  defaultValue=""
+                  name="password"
+                  minLength={8}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <button type="submit" className={styles.formButton}>
                   Create account
                 </button>
                 <p
-                  onClick={() => setSide(!side)}
+                  onClick={() => changeSide(side)}
                   className={styles.formChanger}
                 >
                   Already have a account ?
