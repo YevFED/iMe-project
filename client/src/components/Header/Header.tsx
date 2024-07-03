@@ -12,7 +12,7 @@ const Header = () => {
         link
       </Link>
       <Link to="/" className={styles.headerLogo}>
-        iMe
+        it'sWe
       </Link>
       <Link to="/signup" className={styles.headerLink}>
         Sign Up
